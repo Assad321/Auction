@@ -1,0 +1,39 @@
+hr {
+  border: 0;
+  border-top: 1px solid silver;
+}
+
+label.login {
+    width: 70px !important;
+    text-align: left;
+}
+
+div.ui.auth, div.ui.top.attached.menu {
+    margin-top: 40px;
+}
+
+.ui.main.container {
+    width: 100%;
+}
+
+.hide {
+    display: none !important;
+}
+
+div.title.item {
+    position: inherit !important;
+}
+
+.ng-modal-dialog {
+	width: 30%;
+	padding: 0;
+}
+
+h1.ui.center.header {
+    margin-top: 2em;
+}
+
+.ui.footer.segment {
+    margin: 5em 0em 0em;
+    padding: 5em 0em;
+}

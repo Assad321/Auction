@@ -1,0 +1,11 @@
+{
+  "name": "client",
+  "private": true,
+  "dependencies": {
+    "angular": "~1.4.7",
+    "angular-route": "~1.4.7",
+    "angular-socket-io": "~0.7.0",
+    "semantic-ui": "~2.1.4",
+    "ngModal": "~1.2.2"
+  }
+}

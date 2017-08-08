@@ -1,0 +1,84 @@
+<div ng-show="!vm.loading">
+	<div class="ui three column stackable grid" style="margin-top:40px">
+		<h3>Add Item to Inventory</h3>
+		<div class="ui input">
+			<input type="text" placeholder="Name" ng-model="vm.fileName" />
+		</div>
+		<div ng-hide="vm.fileChosen">
+			<input ng-model="vm.photo" class="ui button"
+				onchange="angular.element(this).scope().file_changed(this)"
+				type="file" accept="image/*"
+				/>
+		</div>
+		<div ng-hide="!vm.fileChosen">
+			<p>{{vm.file.name}}</p>
+			<a class="ui button primary" ng-click="vm.upload(vm.file)">Upload</a>
+		</div>
+	</div>
+
+	<h3>Users</h3>
+	<div ng-show="vm.loading" class="ui active centered inline loader"></div>
+	<div >
+		<div  class="ui celled list">
+			<div class="item" ng-repeat="user in vm.users">
+				<img class="ui avatar image" src="./assets/player.png">
+				<div class="content">
+				<div class="header">{{user.FirstName}}  {{user.LastName}}</div>
+				{{user.Email}}
+				</div>
+				<div  class="ui right floated" ng-click="vm.deleteUser(user)">
+					<i class="remove user icon"></i>
+				</div>
+			</div>
+		</div>
+		<div class="ui animated button" ng-click="vm.addUserView();">
+			<div class="visible content">Add User</div>
+			<div class="hidden content">
+				<i class="add user icon"></i>
+			</div>
+		</div>
+
+		<div ng-show="vm.showAddUser" class="ui segments">
+
+			<div class="ui inverted segment">
+				<div class="ui inverted form">
+					<div class="two fields">
+					<div class="field">
+						<label>First Name</label>
+						<input placeholder="First Name" type="text" ng-model="vm.newUser.FirstName">
+					</div>
+					<div class="field">
+						<label>Last Name</label>
+						<input placeholder="Last Name" type="text" ng-model="vm.newUser.LastName">
+					</div>
+					</div>
+					<div class="two fields">
+						<div class="field">
+							<label>Email</label>
+							<input placeholder="Email" type="text" ng-model="vm.newUser.Email">
+						</div>
+						<div class="field">
+							<label>Password</label>
+							<input placeholder="Password" type="password" ng-model="vm.newUser.Password">
+						</div>
+					</div>
+					<div class="inline field">
+				</div>
+					<div class="ui animated button" ng-click="vm.addUserSave();">
+						<div class="visible content">Add User</div>
+						<div class="hidden content">
+							<i class="add user icon"></i>
+						</div>
+						</div>
+
+						<div class="ui animated button" ng-click="vm.addUserCancel();">
+							<div class="visible content">Cancel</div>
+							<div class="hidden content">
+								<i class="remove icon"></i>
+							</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
